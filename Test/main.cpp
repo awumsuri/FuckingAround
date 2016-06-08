@@ -7,9 +7,10 @@
 //
 
 #include <iostream>
+#include "Fib.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    Fibonacci fib;
+    std::cout << "get fib number:" << fib.dertimineFib(6) << " get sum:" << fib.getSum() << std::endl;
     return 0;
 }

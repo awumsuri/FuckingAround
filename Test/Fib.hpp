@@ -11,11 +11,11 @@
 
 #include <stdio.h>
 class Fibonacci {
-private: int sum;
+private: long sum;
 public:
     Fibonacci(){}
-    int dertimineFib(int);
-    int getSum();
+    long dertimineFib(int);
+    long getSum();
 };
 
 #endif /* Fib_hpp */

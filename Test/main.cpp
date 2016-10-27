@@ -11,6 +11,6 @@
 
 int main(int argc, const char * argv[]) {
     Fibonacci fib;
-    std::cout << "get fib number:" << fib.dertimineFib(6) << " get sum:" << fib.getSum() << std::endl;
+    std::cout << "get fib number:" << fib.dertimineFib(100) << " get sum:" << fib.getSum() << std::endl;
     return 0;
 }

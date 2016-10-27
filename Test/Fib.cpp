@@ -8,13 +8,13 @@
 
 #include "Fib.hpp"
 
-int Fibonacci::dertimineFib(int n){
+long Fibonacci::dertimineFib(int n){
     
-    int h = 1;
-    int p = 0;
+    long h = 1;
+    long p = 0;
         
     for(int i = 0; i < n ; i ++){
-        int temp = p + h;
+        long temp = p + h;
         h = p;
         p = temp;
         sum += (h+p);
@@ -23,6 +23,6 @@ int Fibonacci::dertimineFib(int n){
     return (p + h);
 }
 
-int Fibonacci::getSum(){
+long Fibonacci::getSum(){
     return sum;
 }

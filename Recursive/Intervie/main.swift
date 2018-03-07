@@ -182,5 +182,5 @@ class findTargetNumber {
 
 let test = findTargetNumber()
 //Utils.timeFunction(function: test.findTarget5, arr: test.arr, targetNumber: 2543, description: "Timing findTarget func")
-Utils.timeFunction(function: test.findTarget, arr: arr, map: map, targetNumber: 320, kNumber: 12, description: "Timing findTarget func")
+Utils.timeFunction(function: test.findTarget, arr: arr, map: map, targetNumber: 320, kNumber: 10, description: "Timing findTarget func")
 print("count \(test.count)")

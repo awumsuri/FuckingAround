@@ -70,7 +70,7 @@ int main(int argc, const char * argv[]) {
     
     populateMap(&map, &arr);
     FindTargetFunction target = findTarget;
-    Utils::timeFunction(target, arr, map, 320, 13, "Find Target Number by Summing");
+    Utils::timeFunction(target, arr, map, 320, 10, "Find Target Number by Summing");
     
     return 0;
 }

@@ -8,17 +8,19 @@
 
 import Foundation
 
+let arr: [Int] =  {
+    var a:[Int] = [Int]()
+    for i in 1 ... 1000 {
+        a.append(i)
+    }
+    
+    return a
+}()
+
+var map: [Int: Int] = [:]
+
 class findTargetNumber {
     private var map: [Int: Int] = [:]
-    private var returnValues: [Int] = [Int]()
-    public let arr: [Int] =  {
-        var a:[Int] = [Int]()
-        for i in 1 ... 100 {
-            a.append(i)
-        }
-        
-        return a
-    }()
     
     private func populateMap(map: [Int: Int], targetNumber: Int) -> [Int: Int] {
         var map = map;
@@ -136,7 +138,7 @@ class findTargetNumber {
     
     public var count = 0
     
-    public func findTarget(arr: [Int], targetNumber: Int, numberOfNumbers: Int) -> [Int] {
+    public func findTarget(arr: inout [Int], map: inout [Int: Int], targetNumber: Int, numberOfNumbers: Int) -> [Int] {
         
         if map.isEmpty { map = populateMap(map: [:], targetNumber: targetNumber) }
         
@@ -162,7 +164,7 @@ class findTargetNumber {
                 
             }
                 
-            var newResult =  findTarget(arr: arr, targetNumber: newTargetNumber, numberOfNumbers: (numberOfNumbers - 1))
+            var newResult =  findTarget(arr: &arr, map: &map, targetNumber: newTargetNumber, numberOfNumbers: (numberOfNumbers - 1))
             if !newResult.isEmpty && !newResult.contains(testNumber) {
                 
                 newResult.append(testNumber)
@@ -180,5 +182,5 @@ class findTargetNumber {
 
 let test = findTargetNumber()
 //Utils.timeFunction(function: test.findTarget5, arr: test.arr, targetNumber: 2543, description: "Timing findTarget func")
-Utils.timeFunction(function: test.findTarget, arr: test.arr, targetNumber: 50, kNumber: 5, description: "Timing findTarget func")
+Utils.timeFunction(function: test.findTarget, arr: arr, map: map, targetNumber: 320, kNumber: 12, description: "Timing findTarget func")
 print("count \(test.count)")

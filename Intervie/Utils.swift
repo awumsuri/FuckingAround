@@ -21,12 +21,14 @@ class Utils {
         printTime(description: description, time: (endT!-startT!))
     }
     
-    static func timeFunction(function:([Int], Int, Int) -> [Int], arr: [Int], targetNumber: Int, kNumber: Int, description: String){
+    static func timeFunction(function:(inout [Int], inout [Int: Int], Int, Int) -> [Int], arr: [Int], map: [Int: Int], targetNumber: Int, kNumber: Int, description: String){
+        var arr = arr
+        var map = map
         var description = description
         let startT:TimeInterval?
         let endT:TimeInterval?
         startT = NSDate.timeIntervalSinceReferenceDate
-        let result = function(arr, targetNumber, kNumber)
+        let result = function(&arr, &map, targetNumber, kNumber)
         endT  = NSDate.timeIntervalSinceReferenceDate
         description.append(" " + result.description)
         printTime(description: description, time: (endT!-startT!))

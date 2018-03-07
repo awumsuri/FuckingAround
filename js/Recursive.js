@@ -48,16 +48,15 @@ function findTarget(arr, targetNumber, numberOfResults) {
             if  (map[newTargetNumber] && testNumber !== newTargetNumber)  {
                 return [testNumber, newTargetNumber]
             }
+            continue;
 
-        } else {
+        }
 
-            let newResults = findTarget(arr, newTargetNumber, numberOfResults - 1)
-            if (!_.isEmpty(newResults) && newResults.indexOf(testNumber) === -1) {
+        let newResults = findTarget(arr, newTargetNumber, numberOfResults - 1)
+        if (!_.isEmpty(newResults) && newResults.indexOf(testNumber) === -1) {
 
-               newResults.push(testNumber);
-               return newResults;
-
-            }
+           newResults.push(testNumber);
+           return newResults;
 
         }
 
@@ -66,7 +65,7 @@ function findTarget(arr, targetNumber, numberOfResults) {
     return [];
 }
 console.time("findTarget")
-var result = findTarget(arr, 15, 5)
+var result = findTarget(arr, 320, 12)
 console.timeEnd("findTarget")
 
 console.log("result %s count %s", JSON.stringify(result), count);

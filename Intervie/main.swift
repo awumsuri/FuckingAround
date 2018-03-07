@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class findTargetNumber {
+class findTargetNumber {
     private var map: [Int: Int] = [:]
     private var returnValues: [Int] = [Int]()
     public let arr: [Int] =  {
@@ -25,6 +25,10 @@ open class findTargetNumber {
         for n in arr {
             if n < targetNumber {
                 map[n] = n
+            } else if n > targetNumber {
+                
+                return map
+                
             }
         }
         
@@ -173,6 +177,6 @@ open class findTargetNumber {
 }
 
 let test = findTargetNumber()
-Utils.timeFunction(function: test.findTarget5, arr: test.arr, targetNumber: 34, description: "Timing findTarget func")
-Utils.timeFunction(function: test.findTarget, arr: test.arr, targetNumber: 34, kNumber: 5, description: "Timing findTarget func")
+Utils.timeFunction(function: test.findTarget5, arr: test.arr, targetNumber: 187, description: "Timing findTarget func")
+Utils.timeFunction(function: test.findTarget, arr: test.arr, targetNumber: 2543, kNumber: 5, description: "Timing findTarget func")
 //print(findTarget(arr: arr, targetNumber: 23))

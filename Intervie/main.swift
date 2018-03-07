@@ -13,7 +13,7 @@ class findTargetNumber {
     private var returnValues: [Int] = [Int]()
     public let arr: [Int] =  {
         var a:[Int] = [Int]()
-        for i in 1 ... 1000 {
+        for i in 1 ... 100 {
             a.append(i)
         }
         
@@ -134,12 +134,15 @@ class findTargetNumber {
         return [:]
     }
     
+    public var count = 0
+    
     public func findTarget(arr: [Int], targetNumber: Int, numberOfNumbers: Int) -> [Int] {
         
         if map.isEmpty { map = populateMap(map: [:], targetNumber: targetNumber) }
         
         for i in 0...(arr.count-1) {
-           
+            
+            count += 1
             let testNumber = arr[i]
             
             if testNumber >= targetNumber {
@@ -155,17 +158,16 @@ class findTargetNumber {
                    return [testNumber,  newTargetNumber]
                     
                 }
+                continue
                 
-            } else {
+            }
                 
-                var newResult =  findTarget(arr: arr, targetNumber: newTargetNumber, numberOfNumbers: (numberOfNumbers - 1))
-                if !newResult.isEmpty && !newResult.contains(testNumber) {
-                    
-                    newResult.append(testNumber)
-                    return newResult
-                   
-                }
-
+            var newResult =  findTarget(arr: arr, targetNumber: newTargetNumber, numberOfNumbers: (numberOfNumbers - 1))
+            if !newResult.isEmpty && !newResult.contains(testNumber) {
+                
+                newResult.append(testNumber)
+                return newResult
+               
             }
             
         }
@@ -177,6 +179,6 @@ class findTargetNumber {
 }
 
 let test = findTargetNumber()
-Utils.timeFunction(function: test.findTarget5, arr: test.arr, targetNumber: 187, description: "Timing findTarget func")
-Utils.timeFunction(function: test.findTarget, arr: test.arr, targetNumber: 2543, kNumber: 5, description: "Timing findTarget func")
-//print(findTarget(arr: arr, targetNumber: 23))
+//Utils.timeFunction(function: test.findTarget5, arr: test.arr, targetNumber: 2543, description: "Timing findTarget func")
+Utils.timeFunction(function: test.findTarget, arr: test.arr, targetNumber: 50, kNumber: 5, description: "Timing findTarget func")
+print("count \(test.count)")

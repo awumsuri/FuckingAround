@@ -26,6 +26,8 @@ function populateMap(map, targetNumber) {
     return map
 }
 
+var count = 0;
+
 function findTarget(arr, targetNumber, numberOfResults) {
 
     if (_.isEmpty(map)) {
@@ -33,6 +35,8 @@ function findTarget(arr, targetNumber, numberOfResults) {
     }
 
     for (let i = 0; i < arr.length; i++) {
+
+        count ++
 
         let testNumber = arr[i]
 
@@ -62,7 +66,7 @@ function findTarget(arr, targetNumber, numberOfResults) {
     return [];
 }
 console.time("findTarget")
-var result = findTarget(arr, 2543, 5)
+var result = findTarget(arr, 15, 5)
 console.timeEnd("findTarget")
 
-console.log("result %s", JSON.stringify(result));
+console.log("result %s count %s", JSON.stringify(result), count);

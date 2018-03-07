@@ -1,0 +1,14 @@
+{
+  "name": "interviews",
+  "version": "1.1.1",
+  "description": "Interviews",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Suri Mtui",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.5"
+  }
+}

@@ -10,20 +10,19 @@
 #define __CodingInverviews__Utils__
 
 #include <stdio.h>
-#include <random>
 #include <ctime>
 #include <iostream>
-#include <fstream>
 #include <vector>
 #include <unordered_map>
 #include <string>
 
-typedef std::vector<unsigned long>  (*FindTargetFunction)(std::vector<unsigned long>* arr, std::unordered_map<unsigned long, unsigned long>* map, unsigned long targetNumber, unsigned long numberOfNumbers);
+typedef std::vector<unsigned long> (*FindTargetFunction)(std::vector<unsigned long>* arr, std::unordered_map<unsigned long, unsigned long>* map, unsigned long targetNumber, unsigned long numberOfNumbers);
 
 class Utils{
 public:
 
     static void timeFunction(FindTargetFunction, std::vector<unsigned long> arr, std::unordered_map<unsigned long, unsigned long> map, unsigned long targetNumber, unsigned long numberOfNumbers, std::string description);
+    
     static void PrintArrayIntegers(int*&, int, std::string);
     
 private:

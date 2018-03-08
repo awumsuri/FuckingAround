@@ -16,7 +16,7 @@ void  Utils::timeFunction(FindTargetFunction func, std::vector<unsigned long> ar
     
     clock_t t;
     t   = clock();
-    std::vector<unsigned long> result = (func)(&arr, &map, targetNumber, numberOfNumbers);
+    std::vector<unsigned long> result = func(&arr, &map, targetNumber, numberOfNumbers);
     t   = clock() - t;
     std::string resultString = ("[");
     for( auto const& r : result) {

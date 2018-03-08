@@ -10,7 +10,7 @@ import Foundation
 
 let arr: [Int] =  {
     var a:[Int] = [Int]()
-    for i in 1 ... 1000 {
+    for i in 1 ... 150 {
         a.append(i)
     }
     
@@ -182,5 +182,5 @@ class findTargetNumber {
 
 let test = findTargetNumber()
 //Utils.timeFunction(function: test.findTarget5, arr: test.arr, targetNumber: 2543, description: "Timing findTarget func")
-Utils.timeFunction(function: test.findTarget, arr: arr, map: map, targetNumber: 320, kNumber: 10, description: "Timing findTarget func")
+//Utils.timeFunction(function: test.findTarget, arr: arr, map: map, targetNumber: 100, kNumber: 11, description: "Timing findTarget func")
 print("count \(test.count)")

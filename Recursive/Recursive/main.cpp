@@ -61,6 +61,17 @@ std::vector<unsigned long> findTarget(std::vector<unsigned long>* arr, std::unor
     return {};
 }
 
+void printResult(std::vector<unsigned long> result) {
+    std::string resultString = ("[");
+    for( auto const& r : result) {
+        std::string s = std::to_string((int)r);
+        resultString.append(" " + s + ",");
+    }
+    
+    resultString.append("]\n");
+    std::cout << "result: " << resultString << std::endl;
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::vector<unsigned long> arr;
@@ -79,6 +90,7 @@ int main(int argc, const char * argv[]) {
     //FindTargetFunction target = findTarget;
     //Utils::timeFunction(target, arr, map, 100, 11, "Find Target Number by Summing");
     std::cout << "count:" << count << "\nComputation time(s) "<< (float)t / CLOCKS_PER_SEC << std::endl;
+    printResult(result);
     
     return 0;
 }

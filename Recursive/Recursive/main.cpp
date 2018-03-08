@@ -74,6 +74,8 @@ void printResult(std::vector<unsigned long> result) {
 
 int main(int argc, const char * argv[]) {
     // insert code here...
+    unsigned long targetNumber = atol(argv[1]);
+    unsigned long kNumber = atol(argv[2]);
     std::vector<unsigned long> arr;
     std::unordered_map<unsigned long, unsigned long> map = {};
     

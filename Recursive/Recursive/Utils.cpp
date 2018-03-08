@@ -12,7 +12,7 @@
 #include <string>
 
 
-void  Utils::timeFunction(FindTargetFunction func, std::vector<unsigned long> arr, std::unordered_map<unsigned long, unsigned long> map, unsigned long targetNumber, unsigned long numberOfNumbers,  std::string description){
+void  Utils::timeFunction(FindTargetFunction func, std::vector<unsigned long> arr, std::unordered_map<unsigned long, unsigned long> map, unsigned long targetNumber, unsigned long numberOfNumbers,  std::string description) {
     
     clock_t t;
     t   = clock();
@@ -21,8 +21,9 @@ void  Utils::timeFunction(FindTargetFunction func, std::vector<unsigned long> ar
     std::string resultString = ("[");
     for( auto const& r : result) {
         std::string s = std::to_string((int)r);
-        resultString.append(s + " ,");
+        resultString.append(" " + s + ",");
     }
+    
     resultString.append("]\n");
     description.append(resultString);
     print((float)t, description);

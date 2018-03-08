@@ -11,8 +11,8 @@
 #include <unordered_map>
 #include "Utils.h"
 
-int MAX = 1000;
-
+int MAX = 150;
+unsigned long count = 0;
 
 void populateMap(std::unordered_map<unsigned long, unsigned long>* map, std::vector<unsigned long>* arr) {
     
@@ -27,6 +27,8 @@ std::vector<unsigned long> findTarget(std::vector<unsigned long>* arr, std::unor
     
     for (int i = 0; i < arr->size(); i++) {
         
+        count++;
+       
         unsigned long testNumber = arr->at(i);
         
         if (testNumber >= targetNumber) {
@@ -69,8 +71,10 @@ int main(int argc, const char * argv[]) {
     }
     
     populateMap(&map, &arr);
+    
     FindTargetFunction target = findTarget;
-    Utils::timeFunction(target, arr, map, 320, 10, "Find Target Number by Summing");
+    Utils::timeFunction(target, arr, map, 100, 13, "Find Target Number by Summing");
+    std::cout << "count:" << count << std::endl;
     
     return 0;
 }

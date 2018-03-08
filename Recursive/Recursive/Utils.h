@@ -18,12 +18,7 @@
 #include <unordered_map>
 #include <string>
 
-
-typedef void (*VoidFunctionPointer)();
-typedef float (*FloatFunction)(int, char*);
 typedef std::vector<unsigned long>  (*FindTargetFunction)(std::vector<unsigned long>* arr, std::unordered_map<unsigned long, unsigned long>* map, unsigned long targetNumber, unsigned long numberOfNumbers);
-typedef void (*ArrayFunctionPointer)(int*&);
-
 
 class Utils{
 public:

@@ -3,7 +3,7 @@ const _ = require('lodash');
 let arr = (() => {
     let a = [];
 
-    for(let i = 1; i < 150; i++) {
+    for(let i = 1; i <= 150; i++) {
         a.push(i);
     }
 
@@ -65,7 +65,7 @@ function findTarget(arr, targetNumber, numberOfResults) {
     return [];
 }
 console.time("findTarget")
-var result = findTarget(arr, 100, 11)
+var result = findTarget(arr, 450, 9)
 console.timeEnd("findTarget")
 
 console.log("result %s count %s", JSON.stringify(result), count);

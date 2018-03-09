@@ -86,13 +86,13 @@ int main(int argc, const char * argv[]) {
     populateMap(&map, &arr);
     
     clock_t t;
-    t   = clock();
-    std::vector<unsigned long> result = findTarget(&arr, &map, 100, 12);
-    t   = clock() - t;
-    //FindTargetFunction target = findTarget;
-    //Utils::timeFunction(target, arr, map, 100, 11, "Find Target Number by Summing");
-    std::cout << "count:" << count << "\nComputation time(s) "<< (float)t / CLOCKS_PER_SEC << std::endl;
-    printResult(result);
+    t = clock();
+    std::vector<unsigned long> result = findTarget(&arr, &map, targetNumber, kNumber);
+    t = clock() - t;
+    FindTargetFunction target = findTarget;
+    Utils::timeFunction(target, arr, map, targetNumber, kNumber, "Find Target Number by Summing");
+    //std::cout << "count:" << count << "\nComputation time(s) "<< (float)t / CLOCKS_PER_SEC << std::endl;
+    //printResult(result);
     
     return 0;
 }

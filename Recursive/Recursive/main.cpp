@@ -23,7 +23,8 @@ void populateMap(std::unordered_map<unsigned long, unsigned long>* map, std::vec
     }
 }
 
-std::vector<unsigned long> findTarget(std::vector<unsigned long>*& arr, std::unordered_map<unsigned long, unsigned long>* map, unsigned long targetNumber, unsigned long numberOfNumbers) {
+std::vector<unsigned long> findTarget(std::vector<unsigned long>*& arr,
+                                      std::unordered_map<unsigned long, unsigned long>* map, unsigned long targetNumber, unsigned long numberOfNumbers) {
     
     for (int i = 0; i < arr->size(); i++) {
         
@@ -88,10 +89,10 @@ int main(int argc, const char * argv[]) {
     
     clock_t t;
     t = clock();
-    std::vector<unsigned long> result = findTarget(arr, &map, 435, 11);
+    std::vector<unsigned long> result = findTarget(arr, &map, 450, 11);
     t = clock() - t;
     FindTargetFunction target = findTarget;
-    Utils::timeFunction(target, arr, map, targetNumber, kNumber, "Find Target Number by Summing");
+    //Utils::timeFunction(target, arr, map, targetNumber, kNumber, "Find Target Number by Summing");
     std::cout << "count:" << count << "\nComputation time(s) "<< (float)t / CLOCKS_PER_SEC << std::endl;
     printResult(result);
     

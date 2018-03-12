@@ -14,7 +14,7 @@
 int MAX = 150;
 unsigned long count = 0;
 
-void populateMap(std::unordered_map<unsigned long, unsigned long>* map, std::vector<unsigned long>* arr) {
+void populateMap(std::unordered_map<unsigned long, unsigned long>* map, std::vector<unsigned long>*& arr) {
     
     for(unsigned long i = 0; i < arr->size(); i++) {
         
@@ -23,7 +23,7 @@ void populateMap(std::unordered_map<unsigned long, unsigned long>* map, std::vec
     }
 }
 
-std::vector<unsigned long> findTarget(std::vector<unsigned long>* arr, std::unordered_map<unsigned long, unsigned long>* map, unsigned long targetNumber, unsigned long numberOfNumbers) {
+std::vector<unsigned long> findTarget(std::vector<unsigned long>*& arr, std::unordered_map<unsigned long, unsigned long>* map, unsigned long targetNumber, unsigned long numberOfNumbers) {
     
     for (int i = 0; i < arr->size(); i++) {
         
@@ -76,23 +76,24 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     unsigned long targetNumber = atol(argv[1]);
     unsigned long kNumber = atol(argv[2]);
-    std::vector<unsigned long> arr;
+    std::vector<unsigned long>* arr = new std::vector<unsigned long>();
     std::unordered_map<unsigned long, unsigned long> map = {};
     
     for( unsigned long i = 1; i <= MAX; i++) {
-        arr.push_back(i);
+        arr->push_back(i);
     }
     
-    populateMap(&map, &arr);
+    populateMap(&map, arr);
+    
     
     clock_t t;
     t = clock();
-    std::vector<unsigned long> result = findTarget(&arr, &map, targetNumber, kNumber);
+    std::vector<unsigned long> result = findTarget(arr, &map, 435, 11);
     t = clock() - t;
     FindTargetFunction target = findTarget;
     Utils::timeFunction(target, arr, map, targetNumber, kNumber, "Find Target Number by Summing");
-    //std::cout << "count:" << count << "\nComputation time(s) "<< (float)t / CLOCKS_PER_SEC << std::endl;
-    //printResult(result);
+    std::cout << "count:" << count << "\nComputation time(s) "<< (float)t / CLOCKS_PER_SEC << std::endl;
+    printResult(result);
     
     return 0;
 }

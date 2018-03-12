@@ -12,11 +12,11 @@
 #include <string>
 
 
-void  Utils::timeFunction(FindTargetFunction func, std::vector<unsigned long> arr, std::unordered_map<unsigned long, unsigned long> map, unsigned long targetNumber, unsigned long numberOfNumbers,  std::string description) {
+void  Utils::timeFunction(FindTargetFunction func, std::vector<unsigned long>* arr, std::unordered_map<unsigned long, unsigned long> map, unsigned long targetNumber, unsigned long numberOfNumbers,  std::string description) {
     
     clock_t t;
     t   = clock();
-    std::vector<unsigned long> result = func(&arr, &map, targetNumber, numberOfNumbers);
+    std::vector<unsigned long> result = func(arr, &map, targetNumber, numberOfNumbers);
     t   = clock() - t;
     std::string resultString = ("[");
     for( auto const& r : result) {
